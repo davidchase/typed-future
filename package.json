@@ -39,7 +39,6 @@
     "build:es2015": "tsc -P .config/tsconfig.es2015.json",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 -p angular && git add CHANGELOG.md && git commit -m 'docs(CHANGELOG): amend changelog'",
     "commitmsg": "validate-commit-msg",
-    "docs": "node .scripts/docs.js",
     "postversion": "yarn changelog && git push origin master --tags && npm publish --access=public",
     "precommit": "lint-staged",
     "preversion": "npm test && yarn build",
@@ -47,7 +46,6 @@
     "release:minor": "npm version minor -m 'chore(package): v%s'",
     "test": "yarn test:lint && yarn test:unit",
     "test:lint": "prettier --write --print-width 80--tab-width 2 --no-semi --single-quote --parser typescript 'src/*.ts' 'src/**/*.ts'",
-    "test:unit": "typed-test 'src/*.test.ts' 'src/**/*.test.ts'",
-    "test:watch": "node .scripts/watch.js"
+    "test:unit": "typed-test 'src/*.test.ts' 'src/**/*.test.ts'"
   }
 }
