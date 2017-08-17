@@ -1,8 +1,8 @@
-type Reject<L> = (error: L) => void
-type Resolve<R> = (value: R) => void
-type Computation<L, R> = (reject: Reject<L>, resolve: Resolve<R>) => void
+export type Reject<L> = (error: L) => void
+export type Resolve<R> = (value: R) => void
+export type Computation<L, R> = (reject: Reject<L>, resolve: Resolve<R>) => void
 
-class Future<L, R> {
+export default class Future<L, R> {
   public static of<R>(value: R): Future<never, R> {
     return new Future((_, resolve) => resolve(value))
   }
